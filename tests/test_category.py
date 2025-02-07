@@ -1,14 +1,14 @@
 def test_category_init(first_category, last_category):
     assert first_category.name == "Смартфоны"
     assert (
-        first_category.description
-        == "Смартфоны, как средство не только коммуникации, но и получение дополнительных функций для удобства жизни"
+            first_category.description
+            == "Смартфоны, как средство не только коммуникации, но и получение дополнительных функций для удобства жизни"
     )
 
     assert last_category.name == "Телевизоры"
     assert (
-        last_category.description
-        == "Современный телевизор, который позволяет наслаждаться просмотром, станет вашим другом и помощником"
+            last_category.description
+            == "Современный телевизор, который позволяет наслаждаться просмотром, станет вашим другом и помощником"
     )
 
     assert len(first_category.products) == 2
