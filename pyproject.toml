@@ -58,7 +58,7 @@ exclude = '''
 # максимальная длина строки
 line_length = 119
 
-[tool.coverage.report]
+[report]
 exclude_also = [
     "raise NotImplementedError",
     "if __name__ == .__main__.:",
