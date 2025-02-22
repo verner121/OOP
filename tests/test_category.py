@@ -40,3 +40,8 @@ def test_product_iterator(product_iterator):
 
     with pytest.raises(StopIteration):
         next(product_iterator)
+
+
+def test_category_product_list_setter_smartphone(first_category, smartphone1):
+    first_category.__products = smartphone1
+    assert first_category.product_in_list[-1].name == "Iphone 15"
