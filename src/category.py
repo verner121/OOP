@@ -1,3 +1,6 @@
+from src.product import Product
+
+
 class Category:
     name: int
     description: int
@@ -23,8 +26,11 @@ class Category:
         return " ".join(str(prod) for prod in self.__products)
 
     def add_product(self, new_product):
-        self.__products.append(new_product)
-        self.product_count += 1
+        if isinstance(new_product, Product):
+            self.__products.append(new_product)
+            self.product_count += 1
+        else:
+            raise TypeError
 
     @property
     def product_in_list(self):
