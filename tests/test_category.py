@@ -45,3 +45,8 @@ def test_product_iterator(product_iterator):
 def test_category_product_list_setter_smartphone(first_category, smartphone1):
     first_category.__products = smartphone1
     assert first_category.product_in_list[-1].name == "Iphone 15"
+
+
+def test_avg_products(first_category, new_category):
+    assert first_category.avg_quantity_products() == 30000
+    assert new_category.avg_quantity_products() == 0

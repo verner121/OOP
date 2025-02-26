@@ -1,3 +1,8 @@
+import pytest
+
+from src.product import Product
+
+
 def test_product_1_init(product_1):
     assert product_1.name == "Samsung Galaxy C23 Ultra"
     assert product_1.description == "256GB, Серый цвет, 200MP камера"
@@ -57,3 +62,9 @@ def test_product_str(product_1):
 
 def test_product_add(product_2, product_3):
     assert product_2 + product_3 == 2114000
+
+
+def test_not_quantity_product():
+    with pytest.raises(ValueError) as e:
+        Product("Iphone 15", "512GB, Gray space", 210000.0, 0)
+        assert str(e.value) == "Товар с нулевым количеством не может быть добавлен"
