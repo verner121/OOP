@@ -21,6 +21,15 @@ class Category:
             total_product += product.quantity
         return f"{self.name}, количество продуктов: {total_product} шт."
 
+    def avg_quantity_products(self):
+        try:
+            return round(
+                sum(product.price for product in self.product_in_list)
+                / sum(product.quantity for product in self.product_in_list)
+            )
+        except ZeroDivisionError:
+            return 0
+
     @property
     def products(self):
         return " ".join(str(prod) for prod in self.__products)
@@ -29,6 +38,7 @@ class Category:
         if isinstance(new_product, Product):
             self.__products.append(new_product)
             self.product_count += 1
+            print("Задача добавлена успешно")
         else:
             raise TypeError
 

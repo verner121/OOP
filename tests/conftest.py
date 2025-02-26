@@ -80,3 +80,12 @@ def lawn_grass1():
 @pytest.fixture
 def lawn_grass2():
     return LawnGrass("Xiaomi Redmi Note 11", "1024GB, Синий", 31000.0, 14, "China", 3, "Red")
+
+
+@pytest.fixture
+def new_category():
+    return Category(
+        "Смартфоны",
+        "Смартфоны, как средство получения дополнительных функций для удобства жизни",
+        [],
+    )
